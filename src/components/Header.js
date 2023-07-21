@@ -68,9 +68,7 @@ const Header = () => {
             <a href="/#contact">Contact</a>
           </li>
           <li>
-            <a href="#resume-link" target="_blank" without rel="noreferrer">
-              Resume
-            </a>
+          <a href="/home/ambruchan/portfolio/CV.pdf" download>Download CV</a>
           </li>
         </ul>
       </nav>

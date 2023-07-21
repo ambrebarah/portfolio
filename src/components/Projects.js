@@ -35,11 +35,6 @@ const Projects = () => {
                 </a>
               </h3>
               <p className="text-gray-400 mb-4">{repo.description}</p>
-              <img
-                src={`https://github.com/${repo.owner.login}/${repo.name}/raw/master/screenshot.png`}
-                alt={`${repo.name} screenshot`}
-                className="mb-4 rounded-md"
-              />
               <div className="flex justify-between">
                 <a
                   href={repo.html_url}
