@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const [repos, setRepos] = useState([]);
@@ -15,21 +16,31 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="bg-secondary text-white px-5 py-32" id="projects">
-      <div className="container mx-auto">
-        <h2 className="text-4xl font-bold mb-5 border-b-[5px] w-[180px] border-indigo-600 pb-2">
+    <section id="projects" className="min-h-screen bg-darkBackground text-primaryText flex items-center">
+      <div className="container mx-auto text-center p-16">
+        <motion.h2 
+          className="text-4xl font-mysterious text-secondaryAccent mb-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           My Projects
-        </h2>
-
+        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
-          {repos.map((repo) => (
-            <div className="bg-gray-900 rounded-lg p-6" key={repo.id}>
-              <h3 className="text-xl font-bold mb-4">
+          {repos.map((repo, index) => (
+            <motion.div
+              key={repo.id}
+              className="bg-gray-900 rounded-lg p-6 shadow-lg hover:scale-105 transform transition duration-500"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 * (index + 1), duration: 0.5 }}
+            >
+              <h3 className="text-xl font-bold mb-4 text-secondaryAccent">
                 <a
                   href={repo.html_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-accent hover:text-white"
+                  className="hover:text-accent"
                 >
                   {repo.name}
                 </a>
@@ -40,7 +51,7 @@ const Projects = () => {
                   href={repo.html_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-accent hover:text-white"
+                  className="text-accent hover:text-secondaryAccent"
                 >
                   View on GitHub
                 </a>
@@ -48,7 +59,7 @@ const Projects = () => {
                   {new Date(repo.updated_at).toLocaleDateString()}
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

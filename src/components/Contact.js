@@ -1,75 +1,97 @@
-import React from "react";
+import React, { useState } from "react";
+import emailjs from 'emailjs-com';
+import { motion } from "framer-motion";
 
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const templateParams = {
+      name,
+      email,
+      message,
+    };
+
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams, 'YOUR_USER_ID')
+      .then(() => {
+        setSent(true);
+        setName("");
+        setEmail("");
+        setMessage("");
+      })
+      .catch((err) => console.error("Failed to send message", err));
+  };
+
   return (
-    <section className="bg-secondary text-white px-5 py-32" id="contact">
-      <div className="container mx-auto">
-        <h2 className="text-4xl font-bold mb-10 border-b-5 w-36 border-indigo-600 pb-2">
+    <section id="contact" className="min-h-screen bg-darkBackground text-lightPink flex items-center">
+      <div className="container mx-auto text-center p-16">
+        <motion.h2 
+          className="text-4xl font-mysterious text-secondaryAccent mb-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           Contact Me
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div>
-            <form>
-              <div className="mb-5">
-                <label htmlFor="name" className="block font-bold mb-2">
-                  Name:
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="w-full py-2 px-3 border border-gray-400 rounded-md"
-                  placeholder="Your name"
-                />
-              </div>
-
-              <div className="mb-5">
-                <label htmlFor="email" className="block font-bold mb-2">
-                  Email:
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full py-2 px-3 border border-gray-400 rounded-md"
-                  placeholder="Your email"
-                />
-              </div>
-
-              <div className="mb-5">
-                <label htmlFor="message" className="block font-bold mb-2">
-                  Message:
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  className="w-full py-2 px-3 border border-gray-400 rounded-md h-40 resize-none"
-                  placeholder="Your message"
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-md"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-
-          <div>
-            <div className="mb-5">
-              <h3 className="font-bold mb-2">Email:</h3>
-              <p>ambrebarah@gmaik.com</p>
+        </motion.h2>
+        {sent ? (
+          <motion.div 
+            className="text-xl"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <p>Thank you for your message! I'll get back to you soon.</p>
+          </motion.div>
+        ) : (
+          <motion.form 
+            className="mt-8 space-y-4 max-w-md mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+            onSubmit={handleSubmit}
+          >
+            <div>
+              <label className="block text-sm font-medium">Name:</label>
+              <input 
+                type="text" 
+                className="mt-1 p-2 w-full border border-gray-300 rounded bg-darkBackground text-white" 
+                placeholder="Your name" 
+                value={name} 
+                onChange={(e) => setName(e.target.value)}
+              />
             </div>
-
-            <div className="mb-5">
-              <h3 className="font-bold mb-2">Phone:</h3>
-              <p>+33 6 63 05 74 20</p>
+            <div>
+              <label className="block text-sm font-medium">Email:</label>
+              <input 
+                type="email" 
+                className="mt-1 p-2 w-full border border-gray-300 rounded bg-darkBackground text-white" 
+                placeholder="Your email" 
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
-
-          </div>
+            <div>
+              <label className="block text-sm font-medium">Message:</label>
+              <textarea 
+                className="mt-1 p-2 w-full border border-gray-300 rounded bg-darkBackground text-white" 
+                placeholder="Your message" 
+                value={message} 
+                onChange={(e) => setMessage(e.target.value)}
+              />
+            </div>
+            <button type="submit" className="bg-darkPink hover:bg-secondaryAccent text-white font-bold py-2 px-4 rounded">
+              Send
+            </button>
+          </motion.form>
+        )}
+        <div className="mt-8">
+          <p>Email: ambrebarah@gmail.com</p>
+          <p>Phone: +33 6 63 05 74 20</p>
         </div>
       </div>
     </section>
