@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import aboutImage from '../assets/about-img.png';
 
 const About = () => {
   const { t } = useTranslation();
@@ -18,14 +17,6 @@ const About = () => {
           {t('about.title')}
         </motion.h2>
         <div className="flex flex-col md:flex-row items-center">
-          <motion.img
-            src={aboutImage}
-            alt="About me"
-            className="w-full md:w-1/2 rounded-lg shadow-lg"
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-          />
           <motion.div 
             className="mt-8 md:mt-0 md:ml-8 text-left"
             initial={{ opacity: 0, x: 100 }}
