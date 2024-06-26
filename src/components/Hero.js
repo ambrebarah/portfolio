@@ -1,6 +1,7 @@
 import React from "react";
-import { ReactTyped as Typed } from 'react-typed'; // Utilisation de l'exportation nommée ReactTyped
+import { ReactTyped as Typed } from 'react-typed';
 import { useTranslation } from 'react-i18next';
+import HeroImg from "../assets/hero-img.png";
 import { motion } from "framer-motion";
 import { AiOutlineLinkedin, AiOutlineGithub } from "react-icons/ai";
 
@@ -8,10 +9,10 @@ const Hero = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-black text-lightPink relative">
+    <section id="home" className="min-h-screen flex flex-col items-center justify-center bg-black text-lightPink relative px-4">
       <div className="container mx-auto text-center">
         <motion.h1 
-          className="text-6xl font-mysterious text-darkPink mb-8"
+          className="text-4xl md:text-6xl font-mysterious text-darkPink mb-8"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
@@ -19,7 +20,7 @@ const Hero = () => {
           {t('hero.welcome')}
         </motion.h1>
         <motion.div 
-          className="text-2xl mt-4 text-lightGray"
+          className="text-xl md:text-2xl mt-4 text-lightGray"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1, duration: 1 }}
@@ -64,6 +65,14 @@ const Hero = () => {
           {t('hero.seeProjects')}
         </motion.a>
       </div>
+      <motion.img
+        src={HeroImg}
+        alt="coding illustration"
+        className="absolute bottom-0 right-0 w-2/3 md:w-1/3 opacity-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+      />
     </section>
   );
 };

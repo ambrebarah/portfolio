@@ -8,9 +8,9 @@ const About = () => {
 
   return (
     <section id="about" className="min-h-screen bg-darkBackground text-lightPink flex items-center">
-      <div className="container mx-auto text-center p-16">
+      <div className="container mx-auto text-center px-4 md:px-8">
         <motion.h2 
-          className="text-4xl font-mysterious text-secondaryAccent mb-10"
+          className="text-4xl md:text-6xl font-mysterious text-secondaryAccent mb-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -21,7 +21,7 @@ const About = () => {
           <motion.img
             src={aboutImage}
             alt="About me"
-            className="w-1/2 rounded-lg shadow-lg"
+            className="w-full md:w-1/2 rounded-lg shadow-lg"
             initial={{ opacity: 0, x: -100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
@@ -32,7 +32,7 @@ const About = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <p className="text-xl">{t('about.description')}</p>
+            <p className="text-lg md:text-xl">{t('about.description')}</p>
           </motion.div>
         </div>
       </div>
@@ -41,3 +41,4 @@ const About = () => {
 };
 
 export default About;
+
