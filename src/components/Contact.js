@@ -27,7 +27,7 @@ const Contact = () => {
       from_name: formState.name,
       reply_to: formState.email,
       message: formState.message,
-      phone: formState.phone
+      phone_number: formState.phone
     };
 
     emailjs.send('service_i59q37j', 'template_ikqiaee', templateParams, 'pJkxQfYPsaUywbFSK')

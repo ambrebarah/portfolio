@@ -41,6 +41,7 @@
       "name": "Nom:",
       "email": "Email:",
       "message": "Message:",
+      "phone": "Téléphone",
       "send": "Envoyer",
       "thankYou": "Merci pour votre message ! Je reviendrai vers vous bientôt."
     },
