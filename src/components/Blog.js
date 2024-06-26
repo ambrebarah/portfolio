@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import piscineImage from '../assets/piscine42.jpg'; // Assurez-vous d'avoir une image appropriée
 
-const Piscine42 = () => {
+const Blog = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="piscine42" className="min-h-screen bg-darkBackground text-lightPink flex items-center">
+    <section id="Blog" className="min-h-screen bg-darkBackground text-lightPink flex items-center">
       <div className="container mx-auto text-center p-16">
         <motion.h2 
           className="text-4xl font-mysterious text-secondaryAccent mb-10"
@@ -15,7 +15,7 @@ const Piscine42 = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          {t('piscine42.title')}
+          {t('Blog.title')}
         </motion.h2>
         <div className="flex flex-col md:flex-row items-center">
           <motion.img
@@ -32,8 +32,8 @@ const Piscine42 = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <p className="text-xl">{t('piscine42.description')}</p>
-            <p className="mt-4 text-gray-400">{t('piscine42.period')}</p>
+            <p className="text-xl">{t('Blog.description')}</p>
+            <p className="mt-4 text-gray-400">{t('Blog.period')}</p>
           </motion.div>
         </div>
       </div>
@@ -41,5 +41,5 @@ const Piscine42 = () => {
   );
 };
 
-export default Piscine42;
+export default Blog;
 

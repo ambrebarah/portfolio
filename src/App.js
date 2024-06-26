@@ -12,7 +12,7 @@ import Experience from "./components/Experience";
 import Certifications from "./components/Certifications";
 import ThemeToggle from "./components/ThemeToggle";
 import Puzzle from "./components/Puzzle";
-import Piscine42 from "./components/Piscine42"; // Importez le nouveau composant
+import Blog from "./components/Blog"; // Importez le nouveau composant
 import { useTranslation } from 'react-i18next';
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
           <About />
           <Skills />
           <Experience />
-          <Piscine42 /> {/* Ajoutez le nouveau composant ici */}
+          <Blog /> {/* Ajoutez le nouveau composant ici */}
           <Certifications />
           <Testimonials />
           <Projects />
