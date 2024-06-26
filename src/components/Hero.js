@@ -65,14 +65,6 @@ const Hero = () => {
           {t('hero.seeProjects')}
         </motion.a>
       </div>
-      <motion.img
-        src={HeroImg}
-        alt="coding illustration"
-        className="absolute bottom-0 right-0 w-2/3 md:w-1/3 opacity-20"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-      />
     </section>
   );
 };
