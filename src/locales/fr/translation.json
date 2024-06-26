@@ -1,0 +1,78 @@
+{
+    "header": {
+      "about": "À propos",
+      "skills": "Compétences",
+      "projects": "Projets",
+      "blog": "Blog",
+      "contact": "Contact",
+      "downloadCV": "Télécharger CV"
+    },
+    "hero": {
+        "welcome": "Bienvenue dans le monde d'Ambre",
+        "description1": "Développeuse Fullstack avec une touche mystérieuse",
+        "description2": "Résoudre les problèmes avec du code",
+        "description3": "Créer des solutions innovantes",
+        "seeProjects": "Voir les projets"
+      },
+    "about": {
+      "title": "À propos de moi",
+      "description": "Je suis une développeuse passionnée avec une expertise à la fois en développement front-end et back-end. Au fil des années, j'ai eu l'opportunité de travailler sur une variété de projets utilisant une gamme de technologies. J'ai de l'expérience dans la création d'applications web réactives et conviviales avec des frameworks modernes tels que React, Laravel et Symfony. En back-end, je suis à l'aise avec des langages comme Node.js, PHP et JavaScript, ainsi qu'avec des bases de données telles que MongoDB et MySQL."
+    },
+    "skills": {
+      "title": "Compétences"
+    },
+    "projects": {
+      "title": "Mes projets"
+    },
+    "theme": {
+        "light": "Mode Clair",
+        "dark": "Mode Sombre"
+      },
+      "piscine42": {
+        "title": "Expérience à la Piscine de 42",
+        "description": "J'ai eu l'opportunité de participer au bootcamp intensif de codage, connu sous le nom de 'Piscine', à 42 à Paris. Pendant cette période, j'ai perfectionné mes compétences en codage, appris à travailler sous pression et collaboré avec des pairs sur divers projets de programmation. Cette expérience a été déterminante dans le développement de mes capacités de programmation et de résolution de problèmes.",
+        "period": "Juin 2019 - Juillet 2020"
+      },
+    "certifications": {
+    "title": "Certifications"
+  },
+    "contact": {
+      "title": "Contactez-moi",
+      "name": "Nom:",
+      "email": "Email:",
+      "message": "Message:",
+      "send": "Envoyer",
+      "thankYou": "Merci pour votre message ! Je reviendrai vers vous bientôt."
+    },
+    "puzzle": {
+        "title": "Résolvez l'énigme pour entrer",
+        "description": "Quel est le mot secret ?",
+        "placeholder": "Tapez votre réponse",
+        "submit": "Soumettre",
+        "welcome": "Bienvenue dans mon portfolio",
+        "redirecting": "Redirection..."
+      },
+    "experience": {
+    "title": "Expérience",
+    "role": "Développeuse Web, Alternance",
+    "company": "Recrutop, Paris",
+    "period": "Février 2023 - Novembre 2024",
+    "gofer": {
+      "title": "GOFER",
+      "details": [
+        "Documentation sur Notion sur le code de l'application mobile et l'application web",
+        "Ajout et suppression de fonctionnalités sur application web et mobile avec GraphQL et React/React Native",
+        "Création de scripts no code avec JSON et MongoDB",
+        "Refonte d'une application web en Laravel Nova et base de données Xano en no-code"
+      ]
+    },
+    "garden": {
+      "title": "GARDEN emploi paysagiste",
+      "details": [
+        "Refonte d'un site internet en HTML/CSS/JS puis en React",
+        "Gestion de projet en tant que cheffe de projet pour GARDEN"
+      ]
+    }
+  }
+  }
+  

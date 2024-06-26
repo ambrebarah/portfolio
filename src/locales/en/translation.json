@@ -1,0 +1,80 @@
+{
+    "header": {
+      "about": "About",
+      "skills": "Skills",
+      "projects": "Projects",
+      "blog": "Blog",
+      "contact": "Contact",
+      "downloadCV": "Download CV"
+    },
+    "hero": {
+        "welcome": "Welcome to Ambre's World",
+        "description1": "Fullstack Developer with a Mysterious Touch",
+        "description2": "Solving Problems with Code",
+        "description3": "Creating Innovative Solutions",
+        "seeProjects": "See Projects"
+      },
+      
+    "about": {
+      "title": "About Me",
+      "description": "I am a passionate developer with expertise in both front-end and back-end development. Over the years, I've had the opportunity to work on a variety of projects using a range of technologies. I have experience building responsive, user-friendly web applications with modern front-end frameworks such as React, Laravel, and Symfony. On the back-end, I'm comfortable working with languages such as Node.js, PHP, and JavaScript, as well as databases such as MongoDB and MySQL."
+    },
+    "skills": {
+      "title": "Skills"
+    },
+    "projects": {
+      "title": "My Projects"
+    },
+    "piscine42": {
+        "title": "Experience at 42 Piscine",
+        "description": "I had the opportunity to participate in the intensive coding bootcamp, known as the 'Piscine', at 42 in Paris. During this period, I honed my coding skills, learned to work under pressure, and collaborated with peers on various programming projects. This experience was pivotal in shaping my programming abilities and problem-solving skills.",
+        "period": "June 2019 - July 2020"
+      },
+    "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode"
+  },
+    "contact": {
+      "title": "Contact Me",
+      "name": "Name:",
+      "email": "Email:",
+      "message": "Message:",
+      "send": "Send",
+      "thankYou": "Thank you for your message! I'll get back to you soon."
+    },
+    "certifications": {
+        "title": "Certifications"
+      },
+    "puzzle": {
+    "title": "Solve the Puzzle to Enter",
+    "description": "What is the secret word?",
+    "placeholder": "Type your answer",
+    "submit": "Submit",
+    "welcome": "Welcome to My Portfolio",
+    "redirecting": "Redirecting..."
+  },
+        "experience": {
+          "title": "Experience",
+          "role": "Web Developer, Internship",
+          "company": "Recrutop, Paris",
+          "period": "February 2023 - November 2024",
+          "gofer": {
+            "title": "GOFER",
+            "details": [
+              "Documentation on Notion about the mobile application and web application code",
+              "Adding and removing features on web and mobile applications with GraphQL and React/React Native",
+              "Creating no-code scripts with JSON and MongoDB",
+              "Redesigning a web app in Laravel Nova and Xano no-code database"
+            ]
+          },
+          "garden": {
+            "title": "GARDEN employment landscaper",
+            "details": [
+              "Redesigning a website in HTML/CSS/JS and later in React",
+              "Project management as project manager for GARDEN"
+            ]
+          }
+      }
+      
+  }
+  

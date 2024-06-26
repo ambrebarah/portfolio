@@ -1,32 +1,49 @@
 import React, { useState } from "react";
 import emailjs from 'emailjs-com';
+import { useTranslation } from 'react-i18next';
 import { motion } from "framer-motion";
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const { t } = useTranslation();
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    message: '',
+    phone: ''
+  });
   const [sent, setSent] = useState(false);
+
+  const handleChange = (e) => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const templateParams = {
-      name,
-      email,
-      message,
+      from_name: formState.name,
+      reply_to: formState.email,
+      message: formState.message,
+      phone: formState.phone
     };
 
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams, 'YOUR_USER_ID')
-      .then(() => {
-        setSent(true);
-        setName("");
-        setEmail("");
-        setMessage("");
-      })
-      .catch((err) => console.error("Failed to send message", err));
-  };
+    emailjs.send('service_i59q37j', 'template_ikqiaee', templateParams, 'pJkxQfYPsaUywbFSK')
+    .then(() => {
+      setSent(true);
+      setFormState({
+        name: '',
+        email: '',
+        message: '',
+        phone: ''
+      });
+    })
+    .catch((err) => console.error("Failed to send message", err));
+};
 
+  
   return (
     <section id="contact" className="min-h-screen bg-darkBackground text-lightPink flex items-center">
       <div className="container mx-auto text-center p-16">
@@ -36,7 +53,7 @@ const Contact = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          Contact Me
+          {t('contact.title')}
         </motion.h2>
         {sent ? (
           <motion.div 
@@ -45,7 +62,7 @@ const Contact = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <p>Thank you for your message! I'll get back to you soon.</p>
+            <p>{t('contact.thankYou')}</p>
           </motion.div>
         ) : (
           <motion.form 
@@ -56,42 +73,67 @@ const Contact = () => {
             onSubmit={handleSubmit}
           >
             <div>
-              <label className="block text-sm font-medium">Name:</label>
+              <label className="block text-sm font-medium">{t('contact.name')}</label>
               <input 
                 type="text" 
+                name="name"
                 className="mt-1 p-2 w-full border border-gray-300 rounded bg-darkBackground text-white" 
                 placeholder="Your name" 
-                value={name} 
-                onChange={(e) => setName(e.target.value)}
+                value={formState.name} 
+                onChange={handleChange}
               />
             </div>
             <div>
-              <label className="block text-sm font-medium">Email:</label>
+              <label className="block text-sm font-medium">{t('contact.email')}</label>
               <input 
                 type="email" 
+                name="email"
                 className="mt-1 p-2 w-full border border-gray-300 rounded bg-darkBackground text-white" 
                 placeholder="Your email" 
-                value={email} 
-                onChange={(e) => setEmail(e.target.value)}
+                value={formState.email} 
+                onChange={handleChange}
               />
             </div>
             <div>
-              <label className="block text-sm font-medium">Message:</label>
+              <label className="block text-sm font-medium">{t('contact.phone')}</label>
+              <input 
+                type="text" 
+                name="phone"
+                className="mt-1 p-2 w-full border border-gray-300 rounded bg-darkBackground text-white" 
+                placeholder="Your phone number" 
+                value={formState.phone} 
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium">{t('contact.message')}</label>
               <textarea 
+                name="message"
                 className="mt-1 p-2 w-full border border-gray-300 rounded bg-darkBackground text-white" 
                 placeholder="Your message" 
-                value={message} 
-                onChange={(e) => setMessage(e.target.value)}
+                value={formState.message} 
+                onChange={handleChange}
               />
             </div>
             <button type="submit" className="bg-darkPink hover:bg-secondaryAccent text-white font-bold py-2 px-4 rounded">
-              Send
+              {t('contact.send')}
             </button>
           </motion.form>
         )}
         <div className="mt-8">
           <p>Email: ambrebarah@gmail.com</p>
           <p>Phone: +33 6 63 05 74 20</p>
+        </div>
+        <div className="mt-8">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2633.513337871221!2d7.742609315665874!3d48.58461457925786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4796b7a1a2e5d6c9%3A0x408ab2ae4bb64b0!2sStrasbourg%2C%20France!5e0!3m2!1sen!2sfr!4v1626541249898!5m2!1sen!2sfr"
+            width="600"
+            height="450"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            title="Strasbourg Map"
+          ></iframe>
         </div>
       </div>
     </section>

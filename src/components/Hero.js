@@ -1,28 +1,40 @@
 import React from "react";
-import HeroImg from "../assets/hero-img.png";
+import { ReactTyped as Typed } from 'react-typed'; // Utilisation de l'exportation nommée ReactTyped
+import { useTranslation } from 'react-i18next';
 import { motion } from "framer-motion";
 import { AiOutlineLinkedin, AiOutlineGithub } from "react-icons/ai";
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-black text-lightPink relative">
       <div className="container mx-auto text-center">
         <motion.h1 
-          className="text-6xl font-mysterious text-darkPink"
+          className="text-6xl font-mysterious text-darkPink mb-8"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
         >
-          Welcome to Ambre's World
+          {t('hero.welcome')}
         </motion.h1>
-        <motion.p 
+        <motion.div 
           className="text-2xl mt-4 text-lightGray"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1, duration: 1 }}
         >
-          Fullstack Developer with a Mysterious Touch
-        </motion.p>
+          <Typed
+            strings={[
+              t('hero.description1'),
+              t('hero.description2'),
+              t('hero.description3')
+            ]}
+            typeSpeed={40}
+            backSpeed={50}
+            loop
+          />
+        </motion.div>
         <motion.div 
           className="flex justify-center py-5"
           initial={{ opacity: 0, y: 100 }}
@@ -49,17 +61,9 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 3, duration: 1 }}
         >
-          See Projects
+          {t('hero.seeProjects')}
         </motion.a>
       </div>
-      <motion.img
-        src={HeroImg}
-        alt="coding illustration"
-        className="absolute bottom-0 right-0 lg:w-1/3 opacity-20"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-      />
     </section>
   );
 };

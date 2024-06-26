@@ -2,8 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-color: #222222;
+  --text-color: #f7cad0;
+  --accent-color: #e63946;
+}
+
+.dark {
+  --bg-color: #f7f7f7;
+  --text-color: #333333;
+  --accent-color: #e63946;
+}
+
 body {
-  background-color: #222222; /* black */
-  color: #f7cad0; /* lightPink */
-  font-family: 'Courier New', monospace;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }

@@ -5,30 +5,44 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Testimonials from "./components/Testimonials";
+import Experience from "./components/Experience";
+import Certifications from "./components/Certifications";
+import ThemeToggle from "./components/ThemeToggle";
 import Puzzle from "./components/Puzzle";
+import Piscine42 from "./components/Piscine42"; // Importez le nouveau composant
+import { useTranslation } from 'react-i18next';
 
 function App() {
   const [isSolved, setIsSolved] = useState(false);
+  const { i18n } = useTranslation();
 
   const handleSolve = () => {
     setIsSolved(true);
   };
 
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
   return (
     <>
+      <ThemeToggle />
       {!isSolved ? (
         <Puzzle onSolve={handleSolve} />
       ) : (
         <>
-          <Header />
+          <Header changeLanguage={changeLanguage} />
           <Hero />
           <About />
           <Skills />
+          <Experience />
+          <Piscine42 /> {/* Ajoutez le nouveau composant ici */}
+          <Certifications />
+          <Testimonials />
           <Projects />
-          <Blog />
           <Contact />
           <Footer />
         </>
