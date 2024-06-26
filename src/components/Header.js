@@ -10,6 +10,10 @@ const Header = ({ changeLanguage }) => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleLinkClick = () => {
+    setMenuOpen(false); // Ferme le menu après le clic sur un lien
+  };
+
   return (
     <header className="fixed top-0 w-full bg-black text-lightPink py-4 z-50 shadow-lg">
       <nav className="container mx-auto flex justify-between items-center px-4 md:px-8">
@@ -20,15 +24,15 @@ const Header = ({ changeLanguage }) => {
           </button>
         </div>
         <ul className={`fixed inset-0 bg-black flex flex-col items-center justify-center space-y-4 transition-transform transform ${menuOpen ? 'translate-x-0' : 'translate-x-full'} md:relative md:flex md:flex-row md:space-y-0 md:space-x-4 md:translate-x-0`}>
-          <li><a href="#about" className="hover:text-darkPink">{t('header.about')}</a></li>
-          <li><a href="#skills" className="hover:text-darkPink">{t('header.skills')}</a></li>
-          <li><a href="#projects" className="hover:text-darkPink">{t('header.projects')}</a></li>
-          <li><a href="#blog" className="hover:text-darkPink">{t('header.blog')}</a></li>
-          <li><a href="#contact" className="hover:text-darkPink">{t('header.contact')}</a></li>
-          <li><a href="/CV.pdf" className="hover:text-darkPink" download>{t('header.downloadCV')}</a></li>
+          <li><a href="#about" className="hover:text-darkPink" onClick={handleLinkClick}>{t('header.about')}</a></li>
+          <li><a href="#skills" className="hover:text-darkPink" onClick={handleLinkClick}>{t('header.skills')}</a></li>
+          <li><a href="#projects" className="hover:text-darkPink" onClick={handleLinkClick}>{t('header.projects')}</a></li>
+          <li><a href="#blog" className="hover:text-darkPink" onClick={handleLinkClick}>{t('header.blog')}</a></li>
+          <li><a href="#contact" className="hover:text-darkPink" onClick={handleLinkClick}>{t('header.contact')}</a></li>
+          <li><a href="/cv.pdf" className="hover:text-darkPink" download onClick={handleLinkClick}>{t('header.downloadCV')}</a></li>
           <li className="flex space-x-2">
-            <button onClick={() => changeLanguage('en')} className="hover:text-darkPink">EN</button>
-            <button onClick={() => changeLanguage('fr')} className="hover:text-darkPink">FR</button>
+            <button onClick={() => {changeLanguage('en'); handleLinkClick();}} className="hover:text-darkPink">EN</button>
+            <button onClick={() => {changeLanguage('fr'); handleLinkClick();}} className="hover:text-darkPink">FR</button>
           </li>
         </ul>
       </nav>
