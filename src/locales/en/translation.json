@@ -23,7 +23,8 @@
       "title": "Skills"
     },
     "projects": {
-      "title": "My Projects"
+      "title": "My Projects",
+      "viewOnGitHub": "View on GitHub"
     },
     "Blog": {
         "title": "Experience at 42 Piscine",

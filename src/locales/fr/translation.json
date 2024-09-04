@@ -22,7 +22,8 @@
       "title": "Compétences"
     },
     "projects": {
-      "title": "Mes projets"
+      "title": "Mes projets",
+      "viewOnGitHub": "Voir sur GitHub"
     },
     "theme": {
         "light": "Mode Clair",
