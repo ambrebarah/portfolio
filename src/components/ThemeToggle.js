@@ -1,16 +1,24 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+// ThemeToggle.js
+import React, { useState, useEffect } from "react";
 
-const ThemeToggle = ({ theme, setTheme }) => {
-  const { t } = useTranslation();
+const ThemeToggle = () => {
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+
+  useEffect(() => {
+    document.documentElement.className = theme;
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
-    <button onClick={toggleTheme} className="fixed top-4 left-4 p-2 bg-darkPink text-white rounded">
-      {theme === 'dark' ? t('theme.light') : t('theme.dark')}
+    <button
+      className="btn bg-darkPink text-lightPink hover:text-darkPink"
+      onClick={toggleTheme}
+    >
+      Switch to {theme === "dark" ? "Light" : "Dark"} Mode
     </button>
   );
 };

@@ -29,7 +29,7 @@ function App() {
 
   return (
     <>
-      <ThemeToggle />
+     
       {!isSolved ? (
         <Puzzle onSolve={handleSolve} />
       ) : (
